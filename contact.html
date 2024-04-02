@@ -2,18 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>お問い合わせ | KUJIRA cafe</title>
+<title>お問い合わせ | 上南部中学校1979(S.54)年卒</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="icon" href="images/favicon.ico">
 </head>
 <body>
 <div class="wrapper">
 	<!-- ヘッダー -->
-	<h1 id="logo"><a href="index.html"><img src="images/logo.png" width="217" height="89" alt="KUJIRA cafe"></a></h1>
+	<h1 id="logo"><a href="index.html"><img src="images/logo.png" width="512" height="128" alt="上南部中学校1979(S.54)年卒"></a></h1>
 	<ul id="nav">
 		<li><a href="index.html">ホーム</a></li>
-		<li><a href="about.html">店舗案内</a></li>
-		<li><a href="access.html">アクセス</a></li>
-		<li><a href="menu.html">メニュー</a></li>
+		<li><a href="about.html">学校について</a></li>
+		<li><a href="catch_up.html">みんなの近況</a></li>
 		<li><a href="contact.html">お問い合わせ</a></li>
 	</ul>
 	<!-- ヘッダー ここまで -->
@@ -23,23 +23,15 @@
 		<div>
 			<label for="kind">お問い合わせの種類</label><br>
 			<select id="kind" name="kind">
-				<option value="reservation">パーティの予約について</option>
-				<option value="contact">一般的な問い合わせ</option>
+				<option value="getPW">住所録のパスワードが知りたい</option>
+				<option value="chatchup">近況報告します</option>
+				<option value="etc">その他</option>
 			</select>
 		</div>
 		<div>
-			<label>はじめてのお問い合わせですか？</label><br>
-			<label><input type="radio" name="first" value="yes" checked>はい</label>
-			<label><input type="radio" name="first" value="no">いいえ</label>
-		</div>
-		<div>
-			<label>当カフェをお知りになったきっかけは？</label><br>
-			<label><input type="checkbox" name="how" value="friends">知り合いの紹介で</label>
-			<label><input type="checkbox" name="how" value="magazine">雑誌・Webサイトで見て</label>
-		</div>
-		<div>
+			<p>｢お問い合わせの種類｣で、その他を選択した場合は、件名を入力してください。</p>
 			<label>お問い合わせの件名<br>
-			<input type="text" name="subject" value="お問い合わせ">
+			<input type="text" name="subject" value="お問い合わせ件名">
 			</label>
 		</div>
 		<div>
@@ -47,12 +39,73 @@
 			<textarea name="message"></textarea>
 			</label>
 		</div>
-		<input type="submit" id="title" name="submit" value="送信">
+		<div>
+			<label>氏名<input type="text" name="myName" value="&ensp;姓&ensp;名"></label><br>
+			<label>メルアド<input type="email" name="myMailAdr" value="your.mail@xxxxx.co.jp"></label><br>
+			<label>誕生日</label><br>
+			<label><input type="radio" name="birth_year" value="1963" checked>1963年</label>
+			<label><input type="radio" name="birth_year" value="1964" unchecked>1964年</label>
+
+			<div class="box_mmdd">
+				<select name="month">
+				<option value="">-</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				</select>月
+				<select name="day">
+				<option value="">-</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+				</select>日
+			</div>
+			<p>誕生日は、本人確認のために必要です。一致しない場合は、メールを受け付けません。</p>
+		</div>
+		<input type="submit" id="title" name="submit" value="送信確認">
 	</form>
 	<!-- メイン ここまで -->
 	<!-- フッター -->
 	<div id="footer">
-		<p>&copy;Copyright KUJIRA cafe. All rights reserved.</p>
+		<br><br><br><br><br><br>
+		<p>&copy;Copyright Akihiko.DEAI All rights reserved.</p>
 	</div>
 	<!-- フッター ここまで -->
 </div>

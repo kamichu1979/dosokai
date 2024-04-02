@@ -182,3 +182,78 @@ input[type=submit] {
 	margin: 20px 12px;
 	width: 30em;
 }
+.box1 { /*【div】囲み枠部分*/
+  position: relative; /*必須*/
+  margin: 72px 16px 32px; /*外側の余白*/
+  padding: 16px; /*内側の余白*/
+  border: 5px solid #aaa; /*枠線）*/
+  background: #eee; /*背景色*/
+  color: #555; /*テキスト色*/
+}
+.box1 .box-title { /*【span】タイトル部分*/
+  position: absolute; /*必須*/
+  top: -40px; /*囲み枠の上を基準として外側（上）に40px移動*/
+  left: 12px;  /*囲み枠の左を基準として内側（右）に12px移動*/
+  line-height: 40px; /*行の高さ*/
+  padding: 0 16px; /*左右の余白*/
+  background: #aaa; /*背景色*/
+  border-radius: 5px 5px 0 0; /*角丸（左上5px 右上5px 右下0 左下0）*/
+  color: #fff; /*テキスト色*/
+  font-weight: bold; /*フォント太字*/
+  font-size: 120%; /*フォントサイズ変更*/
+  text-shadow: 2px 2px 5px #555; /*テキストに影を付ける*/
+}
+.box1 p { /*【p】本文部分*/
+  margin: 0; 
+  padding: 0;
+}
+
+.box2 { /*【div】囲み枠部分*/
+  position: relative; /*必須*/
+  margin: 56px 16px 32px; /*外側の余白*/
+  padding: 40px 16px 16px; /*内側の余白*/
+  border: 6px double #99ffcc; /*枠線*/
+  background: fff; /*背景色*/
+  color: #999; /*テキスト色*/
+  box-shadow: 5px 5px 0 #aaffdd; /*囲み枠に影を付ける*/
+}
+.box2 .box-title { /*【span】タイトル部分*/
+  position: absolute; /*必須*/
+  top: -24px;  /*囲み枠の上を基準として外側（上）に24px移動*/
+  left: 16px; /*囲み枠の左を基準として内側（右）に16px移動*/
+  line-height:48px; /*行の高さ*/
+  padding: 0 12px; /*左右の余白*/
+  background: #99ffcc; /*背景色*/
+  border-radius: 40px; /*角丸*/
+  color: #448866; /*テキスト色*/
+}
+.box2 p { /*【p】本文部分*/
+  margin: 0;
+  padding: 0;
+}
+
+.box3 { /*【div】囲み枠部分*/
+  position: relative; /*必須*/
+  margin: 32px 16px; /*外側の余白*/
+  padding: 48px 16px 16px; /*内側の余白*/
+  border: 2px solid gold; /*枠線*/
+  border-radius: 15px 0 15px 0; /*角丸（左上15px 右上0 右下15px 左下0）*/
+}
+.box3 .box-title { /*【span】タイトル部分*/
+  position: absolute; /*必須*/
+  top: 0; /*囲み枠の上にぴったりくっつく*/
+  left: 0; /*囲み枠の左にぴったりくっつく*/
+  background: gold; /*背景色*/
+  line-height: 32px; /*行の高さ*/  
+  padding: 0 15px; /*左右の余白*/
+  border-radius: 12px 0 12px 0; /*角丸（左上12px 右上0 右下12px 左下0）*/
+  font-weight: bold; /*フォント太字*/
+}
+.box3 p { /*【p】本文部分*/
+  margin: 0;
+  padding: 0;
+}
+
+.box_mmdd select{
+  width: 50px;
+}
