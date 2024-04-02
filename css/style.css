@@ -257,3 +257,24 @@ input[type=submit] {
 .box_mmdd select{
   width: 50px;
 }
+
+#result {
+	width: 800px;
+	border: 1px solid #cccccc;
+	border-collapse: collapse;
+}
+#result th,
+#result td {
+	padding: 0.5em;
+	border: 1px solid #cccccc;
+	text-align: left;
+	vertical-align: top;
+}
+#result th {
+	width: 100px;
+	background-color: #eeeeee;
+}
+#result td {
+	width: 100px;
+	background-color: #eeeeee;
+}
