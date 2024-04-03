@@ -21,33 +21,33 @@
 	<h2>お問い合わせ</h2>
 	<form method="GET" action="result.html">
 		<div>
-			<label for="kind">お問い合わせの種類</label><br>
-			<select id="kind" name="kind">
-				<option value="getPW">住所録のパスワードが知りたい</option>
-				<option value="chatchup">近況報告します</option>
-				<option value="etc">その他</option>
+			<label for="kind">問合せの種類</label><br>
+			<select id="kind" name="問合せ種別">
+				<option value="近況報告">近況報告します</option>
+				<option value="パスワード取得">住所録のパスワードが知りたい</option>
+				<option value="その他">その他</option>
 			</select>
 		</div>
 		<div>
-			<p>｢お問い合わせの種類｣で、その他を選択した場合は、件名を入力してください。</p>
-			<label>お問い合わせの件名<br>
-			<input type="text" name="subject" value="お問い合わせ件名">
+			<p>｢問合せの種類｣で、[その他]を選択した場合は、件名を入力してください。</p>
+			<label>件名<br>
+			<input type="text" name="件名" value="">
 			</label>
 		</div>
 		<div>
 			<label>お問い合わせの具体的な内容<br>
-			<textarea name="message"></textarea>
+			<textarea name="メッセージ"></textarea>
 			</label>
 		</div>
 		<div>
-			<label>氏名<input type="text" name="myName" value="&ensp;姓&ensp;名"></label><br>
-			<label>メルアド<input type="email" name="myMailAdr" value="your.mail@xxxxx.co.jp"></label><br>
-			<label>誕生日</label><br>
-			<label><input type="radio" name="birth_year" value="1963" checked>1963年</label>
-			<label><input type="radio" name="birth_year" value="1964" unchecked>1964年</label>
-
+			<label>氏&ensp;&ensp;名&ensp;&ensp;<input type="text" name="氏名" value="" required="required"></label><br><br>
+			<!-- <label>メルアド<input type="text" name="メルアド前" value="your.mail" required="required"></label> -->
+			<!-- <label>@<input type="text" name="メルアド後" value="mail.domain" required="required"></label><br><br> --> 
+			<label>誕&ensp;生&ensp;日</label><br>
+			<label><input type="radio" name="誕生年" value="1963" checked>1963年</label>
+			<label><input type="radio" name="誕生年" value="1964" unchecked>1964年</label>
 			<div class="box_mmdd">
-				<select name="month">
+				<select name="誕生月" required="required">
 				<option value="">-</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -62,7 +62,7 @@
 				<option value="11">11</option>
 				<option value="12">12</option>
 				</select>月
-				<select name="day">
+				<select name="誕生日" required="required">
 				<option value="">-</option>
 				<option value="1">1</option>
 				<option value="2">2</option>

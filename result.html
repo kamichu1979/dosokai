@@ -3,62 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <title>お問い合わせの入力内容</title>
-<style>
-#result {
-	width: 800px;
-	border: 1px solid #cccccc;
-	border-collapse: collapse;
-}
-#result th,
-#result td {
-	padding: 0.5em;
-	border: 1px solid #cccccc;
-	text-align: left;
-	vertical-align: top;
-}
-#result th {
-	width: 100px;
-	background-color: #eeeeee;
-}
-#result td {
-	width: 100px;
-	background-color: #eeeeee;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="icon" href="images/favicon.ico">
 <script>
-window.onload = function() {
-	var params = decodeURI(location.search);
-	params = params.substring(1);
-	var paramArray = [];
-	paramArray = params.split("&");
-	var tableContent = "";
-	for(var i in paramArray) {
-		var dataStr = paramArray[i];
-		var keyValue = [];
-		keyValue = dataStr.split("=");
-		var tr = document.createElement("tr");
-		var tdName = document.createElement("td");
-		tdName.innerHTML = keyValue[0];
-		var tdValue = document.createElement("td");
-		tdValue.innerHTML = keyValue[1];
-		tr.appendChild(tdName);
-		tr.appendChild(tdValue);
-		var e = document.getElementById("test");
-		e.appendChild(tr);
-	}
-};
-
-</script>
+	window.onload = function() {
+		var ln = '%0D%0A';
+		var params = decodeURI(location.search);
+		params = params.substring(1);
+		var paramArray = [];
+		paramArray = params.split("&");
+		var tableContent = "";
+		var mailNm = "";
+		var mailAdr = "";
+		var mailTitle = "";
+		var mailMsg = "";
+		var birthDay = ""
+		for(var i in paramArray) {
+			var flgLstAdd = true;
+			var dataStr = paramArray[i];
+			var keyValue = [];
+			keyValue = dataStr.split("=");
+			switch (keyValue[0]){
+			case "submit":
+				flgLstAdd = false;
+				break;
+			case "問合せ種別":
+				switch (keyValue[1]) {
+				case "近況報告":
+					mailTitle = "近況報告します";
+					break;
+				case "パスワード取得":
+					mailTitle = "住所録のパスワードが知りたい";
+					break;
+				default:
+					mailTitle = "その他";
+					break;
+				}
+				break;
+			case "氏名":
+				mailNm = keyValue[1];
+				break;
+			case "件名":
+				if(!(keyValue[1] == '' || keyValue[1] == 'お問い合わせ件名')) mailTitle = keyValue[1];
+				break;
+			case "メッセージ":
+				mailMsg = keyValue[1];
+				break;
+			case "メルアド前":
+				mailAdr = keyValue[1] + "@";
+				break;
+			case "メルアド後":
+				mailAdr += keyValue[1];
+				break;
+			case "誕生年":
+				birthDay =  keyValue[1] + "年";
+				break;
+			case "誕生月":
+				birthDay +=  keyValue[1] + "月";
+				break;
+			case "誕生日":
+				birthDay +=  keyValue[1] + "日";
+				break;
+			default:
+				break;
+			}
+			if(flgLstAdd) {
+				var tr = document.createElement("tr");
+				var tdName = document.createElement("td");
+				tdName.innerHTML = keyValue[0];
+				var tdValue = document.createElement("td");
+				tdValue.innerHTML = keyValue[1];
+				tr.appendChild(tdName);
+				tr.appendChild(tdValue);
+				var lstItem = document.getElementById("inputItems");
+				lstItem.appendChild(tr);		
+			}
+		}
+		let btnMail = document.getElementById('btnMail');
+		let newMsg = 'mailto:deai0725@gmail.com'
+		newMsg += '?subject=' + mailTitle;
+		newMsg += '&body=' + mailMsg + ln + ln + '氏名: ' + mailNm + ln + '誕生日: ' + birthDay + ln;
+		// href属性の値を書き換える
+		btnMail.setAttribute('href', newMsg);
+	};
+	</script>
 </head>
 <body>
-<h1>お問い合わせフォームの入力内容</h1>
-<table id="result">
-	<tbody id="test">
-	<tr><th>name属性</th><th>入力された内容</th></tr>
-	</tbody>
-</table>
-<a href="mailto:info@sample.com?subject=件名&body=本文のテキスト">メール起動</a>
-
-<p><a href="contact.html">←お問い合わせフォームに戻る</a></p>
+<div class="wrapper">
+	<br>
+	<p><input type="button" value="←お問い合わせフォームに戻る" onClick="location.href='contact.html'"></p><br>
+	<h1>お問い合わせフォームの入力内容</h1>
+	<table id="result">
+		<tbody id="inputItems">
+			<tr><th>入力項目</th><th>入力された内容</th></tr>
+		</tbody>
+	</table>
+	<br>
+	<p><a id="btnMail" href="mailto:deai0725@gmail.com?subject=件名&body=本文のテキスト">メール起動</a></p>
+</div>
 </body>
 </html>
